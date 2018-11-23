@@ -6,7 +6,6 @@ install:
   - go version
 
 script:
-    - msbuild /p:Configuration=Release Lykke.Service.Skycoin.API.sln
     - make test
 
 notifications:
