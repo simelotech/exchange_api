@@ -7,6 +7,7 @@ install:
 
 script:
     - msbuild /p:Configuration=Release Lykke.Service.Skycoin.API.sln
+    - msbuild /p:Configuration=Debug Lykke.Service.Skycoin.API.sln
     - make test
 
 notifications:
