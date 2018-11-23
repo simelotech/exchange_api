@@ -1,1 +1,9 @@
 language: csharp
+solution: Lykke.Service.Skycoin.API.sln 
+
+install:
+  - eval "$(gimme 1.10)"
+  - go version
+
+script:
+    - msbuild /p:Configuration=Release Lykke.Service.Skycoin.API.sln
