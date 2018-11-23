@@ -7,3 +7,8 @@ install:
 
 script:
     - msbuild /p:Configuration=Release Lykke.Service.Skycoin.API.sln
+    - make test
+
+notifications:
+  email: false
+  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
