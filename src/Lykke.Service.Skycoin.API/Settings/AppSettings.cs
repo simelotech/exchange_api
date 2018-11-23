@@ -6,6 +6,6 @@ namespace Lykke.Service.Skycoin.API.Settings
     [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
     public class AppSettings : BaseAppSettings
     {
-        public Skycoin.APISettings Skycoin.APIService { get; set; }
+        public SkycoinAPISettings SkycoinAPIService { get; set; }
     }
 }

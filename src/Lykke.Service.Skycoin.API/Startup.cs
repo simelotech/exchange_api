@@ -31,7 +31,7 @@ namespace Lykke.Service.Skycoin.API
                 options.Logs = logs =>
                 {
                     logs.AzureTableName = "Skycoin.APILog";
-                    logs.AzureTableConnectionStringResolver = settings => settings.Skycoin.APIService.Db.LogsConnString;
+                    logs.AzureTableConnectionStringResolver = settings => settings.SkycoinAPIService.Db.LogsConnString;
 
                     // TODO: You could add extended logging configuration here:
                     /* 

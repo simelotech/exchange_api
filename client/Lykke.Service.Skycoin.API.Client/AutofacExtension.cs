@@ -18,9 +18,9 @@ namespace Lykke.Service.Skycoin.API.Client
         /// <param name="builder">Autofac container builder.</param>
         /// <param name="settings">Skycoin.API client settings.</param>
         /// <param name="builderConfigure">Optional <see cref="HttpClientGeneratorBuilder"/> configure handler.</param>
-        public static void RegisterSkycoin.APIClient(
+        public static void RegisterSkycoinAPIClient(
             [NotNull] this ContainerBuilder builder,
-            [NotNull] Skycoin.APIServiceClientSettings settings,
+            [NotNull] SkycoinAPIServiceClientSettings settings,
             [CanBeNull] Func<HttpClientGeneratorBuilder, HttpClientGeneratorBuilder> builderConfigure)
         {
             if (builder == null)
@@ -28,15 +28,15 @@ namespace Lykke.Service.Skycoin.API.Client
             if (settings == null)
                 throw new ArgumentNullException(nameof(settings));
             if (string.IsNullOrWhiteSpace(settings.ServiceUrl))
-                throw new ArgumentException("Value cannot be null or whitespace.", nameof(Skycoin.APIServiceClientSettings.ServiceUrl));
+                throw new ArgumentException("Value cannot be null or whitespace.", nameof(SkycoinAPIServiceClientSettings.ServiceUrl));
 
             var clientBuilder = HttpClientGenerator.HttpClientGenerator.BuildForUrl(settings.ServiceUrl)
                 .WithAdditionalCallsWrapper(new ExceptionHandlerCallsWrapper());
 
             clientBuilder = builderConfigure?.Invoke(clientBuilder) ?? clientBuilder.WithoutRetries();
 
-            builder.RegisterInstance(new Skycoin.APIClient(clientBuilder.Create()))
-                .As<ISkycoin.APIClient>()
+            builder.RegisterInstance(new SkycoinAPIClient(clientBuilder.Create()))
+                .As<ISkycoinAPIClient>()
                 .SingleInstance();
         }
     }

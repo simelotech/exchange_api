@@ -5,7 +5,7 @@ namespace Lykke.Service.Skycoin.API.Client
     /// <summary>
     /// Skycoin.API client settings.
     /// </summary>
-    public class Skycoin.APIServiceClientSettings 
+    public class SkycoinAPIServiceClientSettings
     {
         /// <summary>Service url.</summary>
         [HttpCheck("api/isalive")]

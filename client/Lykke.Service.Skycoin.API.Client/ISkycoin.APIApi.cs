@@ -10,7 +10,7 @@ namespace Lykke.Service.Skycoin.API.Client
     /// Skycoin.API client API interface.
     /// </summary>
     [PublicAPI]
-    public interface ISkycoin.APIApi
+    public interface ISkycoinAPIApi
     {
     }
 }
